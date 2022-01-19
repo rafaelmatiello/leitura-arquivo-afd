@@ -16,11 +16,12 @@ public class ArquivoAfdClassifierReaderConfig {
 	@Bean
 	@StepScope
 	public FlatFileItemReader arquivoAdfClassifierReader(
-			@Value("#{jobParameters['arquivoAfd']}") Resource arquivoClientes, 
+			@Value("#{jobParameters['arquivoAfd']}") Resource arquivoAfd,
 			LineMapper lineMapper) {
+
 		return new FlatFileItemReaderBuilder()
 				.name("processadorClassifierReader")
-				.resource(arquivoClientes)
+				.resource(arquivoAfd)
 				.lineMapper(lineMapper).build();
 
 	}

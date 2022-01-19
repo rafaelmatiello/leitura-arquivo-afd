@@ -13,3 +13,26 @@ spring-batch
 Para Inicializar:
 
 arquivoAfd=file:files/exemplo_completo.txt
+
+## invocar o serviço
+
+url: 
+
+POST localhost:8080/run
+
+body:
+
+{
+    "name": "ArquivoAFDJob",// deve ser o nome do Bean do JOB
+    "jobParameters": {
+        "arquivoAfd": "file:D:\\repositorios\\leitura-arquivo-afd\\files\\exemplo_completo.txt" //como parâmetro passar o arquivo 
+    }
+}
+
+Result:
+
+{
+    "exitCode": "COMPLETED",
+    "exitDescription": "",
+    "running": false
+}
